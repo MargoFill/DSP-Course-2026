@@ -5,10 +5,7 @@ This repository contains my MATLAB code and exported figures for the signal proc
 
 ---
 
-## Task 1: Create a Sine Wave
-A basic sine wave (Amplitude = 1, Frequency = 5 Hz, Duration = 1 second) was generated and plotted with appropriate labels, a title, and a grid.
 
----
 
 ## Task 2: Compare Different Frequencies
 Three sine waves with frequencies of 2 Hz, 5 Hz, and 10 Hz were generated and plotted using subplots.
@@ -49,13 +46,6 @@ A clean 5 Hz sine wave was generated, and random noise was added to it to simula
 
 ---
 
-## Task 5: Save Figures
-The generated plots have been exported and saved in this repository as:
-*   `frequency_comparison.png`
-*   `amplitude_comparison.png`
-*   `clean_vs_noisy_signal.png`
-
----
 
 ## Task 6: Use AI Responsibly
 
