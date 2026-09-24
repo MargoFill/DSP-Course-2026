@@ -20,6 +20,7 @@
 4) Did the aliased signal sound different?
   - Yes.
 5) Why can MATLAB not recover the original 7 kHz signal after aliasing?
-  - When sampling frequency becomes lower than 2x the highrst frequency contained in the signal.
+  - When aliasing occurs, different frequencies produce the same sampling data, so the original 7 kHz signal cannot be recovered.
+
 
 
