@@ -12,9 +12,9 @@
 # Questions
 
 1) Which sampling frequencies represented the 7 kHz signal correctly?
--24 kHz, 16 kHz.
+- 24 kHz, 16 kHz.
 2) When did the 7 kHz signal appear as another frequency?
-  WHen sampling frequency was 12 kHz and 8 kHz.
+  - When sampling frequency was 12 kHz and 8 kHz.
 3) What happened when the Nyquist frequency became lower than 7 kHz?
   Aliasing.
 4) Did the aliased signal sound different?
