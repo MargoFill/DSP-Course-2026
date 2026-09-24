@@ -16,10 +16,10 @@
 2) When did the 7 kHz signal appear as another frequency?
   - When sampling frequency was 12 kHz and 8 kHz.
 3) What happened when the Nyquist frequency became lower than 7 kHz?
-  Aliasing.
+  - Aliasing.
 4) Did the aliased signal sound different?
-  Yes.
+  - Yes.
 5) Why can MATLAB not recover the original 7 kHz signal after aliasing?
-  When sampling frequency becomes lower than 2x the highrst frequency contained in the signal.
+  - When sampling frequency becomes lower than 2x the highrst frequency contained in the signal.
 
 
