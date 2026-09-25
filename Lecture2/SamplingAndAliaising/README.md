@@ -6,8 +6,12 @@
 
  ## Nyquist Analysis
 
- $`fN=fm/2 => fN=10Hz/2 =5Hz`$
- 
+ $`fN=fmax/2 => fN=10Hz/2 =5Hz`$
+
+1) Which sampling frequencies satisfy the Nyquist criterion?
+   Any which are no more than twice smaller than maximum frequency
+2) Is sampling exactly at the Nyquist rate recommended in practice? Explain your answer.
+   Yes.
 
  ## Results
 
