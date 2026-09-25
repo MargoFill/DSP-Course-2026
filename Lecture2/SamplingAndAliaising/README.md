@@ -9,8 +9,11 @@ The objective is to investigate how different sampling frequencies affect signal
  $` fs=2fmax `$
  
  $` fN=fs/2 `$ 
+ 
  =>
+ 
  $` fs=10Hz*2=20Hz `$
+ 
  $` fN=20Hz/2 =10Hz `$
 
 1) Which sampling frequencies satisfy the Nyquist criterion?
