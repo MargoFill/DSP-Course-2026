@@ -6,7 +6,11 @@ The objective is to investigate how different sampling frequencies affect signal
 
  ## Nyquist Analysis
 
- $` fs=2fmax, fN=fs/2 => fs=10Hz*2=20Hz fN=20Hz/2 =10Hz `$
+ $` fs=2fmax `$
+ $` fN=fs/2 `$ 
+ =>
+ $` fs=10Hz*2=20Hz `$
+ $` fN=20Hz/2 =10Hz `$
 
 1) Which sampling frequencies satisfy the Nyquist criterion?
    The frequencies 20 Hz, 25 Hz, 50 Hz, and 100 Hz satisfy the criterion because they are strictly greater than or equal to 20 Hz. 15 Hz does not satisfy the criterion.
