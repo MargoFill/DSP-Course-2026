@@ -7,6 +7,7 @@ The objective is to investigate how different sampling frequencies affect signal
  ## Nyquist Analysis
 
  $` fs=2fmax `$
+ 
  $` fN=fs/2 `$ 
  =>
  $` fs=10Hz*2=20Hz `$
