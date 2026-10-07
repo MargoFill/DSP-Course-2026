@@ -37,6 +37,9 @@ It is commonly used for smoothing raw sensor data, such as stabilizing temperatu
 
 ## AI Usage
 
-Tool used: Gemini
-How I used it: I used the AI to explain the syntax of specific MATLAB plotting commands and to help me understand the theoretical concepts behind convolution and filter lengths.
-What I verified or changed: I reviewed the AI's explanations for the theoretical questions and rewrote aome of the final answers in my own words.
+- Tool used:
+  Gemini
+- How I used it:
+  I used the AI to explain the syntax of specific MATLAB plotting commands and to help me understand the theoretical concepts behind convolution and filter lengths.
+- What I verified or changed:
+  I reviewed the AI's explanations for the theoretical questions and rewrote aome of the final answers in my own words.
