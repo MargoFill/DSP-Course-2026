@@ -5,7 +5,7 @@
 - The term $2z^{-1}$ represents the sample at $n=1$, where $x[1] = 2$.
 - The term $z^{-2}$ represents the sample at $n=2$, where $x[2] = 1$.
 ### 2. Write the Z-transform of the delayed signal.
-` X(z) = z⁻¹ + 2z⁻²+z^{-3}$ `
+` X(z) = z⁻¹ + 2z⁻²+z<sup>-3</sup> `
 ### 3. Explain why delaying the signal by one sample multiplies X(z) by z⁻¹.
 
 
