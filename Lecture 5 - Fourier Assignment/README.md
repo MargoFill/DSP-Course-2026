@@ -7,9 +7,9 @@ As H increases, waves increases idk how to desct=ribe, more tops and poles ape\p
 in sharp transitions we see a little bit increased waves than all the others.
 # TASK 2  Find Two Frequencies with the FFT
 ## Frequencies and Amplitudes
-f1=15Hz, A1=0.8
+`f1=15Hz, A1=0.8`
 
-f2=40Hz, A2=0.4
+`f2=40Hz, A2=0.4`
 ## Predictions
 ## Results
 # TASK 3 Investigate Spectral Leakage
