@@ -44,13 +44,13 @@ t = 0:1/fs:T-1/fs;
 x = 0.8*sin(2*pi*15*t) + 0.4*sin(2*pi*f2*t);
 
 N = length(x);
-N_fft = 4 * N;              % Длина FFT увеличена в 4 раза за счет нулей
-Y = fft(x, N_fft);          % Передаем N_fft в функцию fft
+N_fft = 4 * N;              
+Y = fft(x, N_fft);          
 
-P2 = abs(Y/N);              % Делим на N (длину сигнала), а не на N_fft
+P2 = abs(Y/N);              
 P1 = P2(1:N_fft/2+1);
 P1(2:end-1) = 2*P1(2:end-1);
-f = fs*(0:N_fft/2)/N_fft;   % Ось частот строим по N_fft
+f = fs*(0:N_fft/2)/N_fft;   
 
 subplot(3, 1, 3);
 plot(f, P1); grid on;
