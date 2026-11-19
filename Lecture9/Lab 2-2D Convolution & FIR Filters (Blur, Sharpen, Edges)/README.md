@@ -1,4 +1,4 @@
-# =2D Convolution & FIR Filters (Blur, Sharpen, Edges)
+# 2D Convolution & FIR Filters (Blur, Sharpen, Edges)
 
 ---
 
