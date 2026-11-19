@@ -12,7 +12,7 @@ Loaded `peppers.png` as a normalized grayscale image (`[0, 1]`) and simulated tw
 ---
 
 ## Compute Simple Quality Metrics
-Quantified baseline image degradation relative to the clean reference image using Mean-Square Error (`immse`), where $\text{MSE} = \frac{1}{MN}\sum (I_{\text{noisy}} - I)^2$ (lower MSE corresponds to higher Signal-to-Noise Ratio, $\text{SNR} = 10\log_{10}(P_{\text{signal}} / \text{MSE})$):
+Quantified baseline image degradation relative to the clean reference image using Mean-Square Error (`immse`), where $\text{MSE} = \frac{1}{MN}\sum (I_{\text{noisy}} - I)^2$ (lower MSE corresponds to higher Signal-to-Noise Ratio(SNR):
 
 * **Console output:** `MSE Gaussian: 0.0096 | MSE S&P: 0.0158`*
 
