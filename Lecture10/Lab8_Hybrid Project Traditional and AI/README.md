@@ -2,12 +2,12 @@
 
 ---
 
-## 1. Setup: Load Image and Pre-Trained AI Network
+## Setup: Load Image and Pre-Trained AI Network
 Loaded the sample RGB image `peppers.png` and initialized **SqueezeNet** (`squeezenet`), a lightweight pre-trained Convolutional Neural Network (CNN) trained on ImageNet for 1000-class object recognition.
 
 ---
 
-## 2. Traditional Method: Color Segmentation using K-Means
+## Traditional Method: Color Segmentation using K-Means
 Used classical unsupervised clustering to isolate the foreground objects from the background before passing the image to the neural network:
 1. Converted the image from RGB to the **CIE $L^*a^*b^*$ color space** (`rgb2lab`) and extracted only the chrominance channels (`a*` and `b*`), making segmentation invariant to lighting/brightness variations.
 2. Applied **K-Means clustering** (`imsegkmeans(ab, 2)`) to group pixels into two dominant color clusters (foreground vs. background).
@@ -15,22 +15,28 @@ Used classical unsupervised clustering to isolate the foreground objects from th
 
 ---
 
-## 3. AI Method: Image Classification (SqueezeNet)
+## AI Method: Image Classification (SqueezeNet)
 Prepared the segmented foreground image for deep learning inference:
 * Resized `isolatedObject` to match SqueezeNet's required input tensor dimensions (`227 x 227 x 3`) via `imresize`.
 * Ran forward inference using `classify(net, resizedObject)` to obtain the top predicted class label (`YPred`) and class probability distribution (`probs`).
 
-![Hybrid Pipeline Images](screenshots/hybrid_pipeline.png)
+### Hybrid Pipeline Images
+<img width="671" height="491" alt="image" src="https://github.com/user-attachments/assets/42fd41b8-9a00-4e1c-b7ad-3ce6132289aa" />
+
 
 ---
 
 ## 4. Results Analysis
 
 * **Console Output:**
-  * **Predicted Class:** `bell pepper` *(замените на класс, который выведет ваша консоль)*
-  * **Confidence (Probability):** `84.52%` *(замените на ваш процент из консоли)*
+  * **Predicted Class:** `sea slug` 
+  * **Confidence (Probability):** `32.84%` 
 
-### Why Combining Traditional + AI Methods Helps
-* **Reduced Background Distraction:** Pre-trained CNNs evaluate the entire frame; complex backgrounds can activate unrelated feature maps and lower prediction confidence. K-Means color segmentation acts as an attention mechanism that removes background noise before classification.
-* **Complementary Strengths:** Traditional color-space clustering is fast, interpretable, and requires zero training data to separate distinct color regions, while the pre-trained CNN provides high-level semantic recognition without needing manual feature engineering.
-* **Observed Limitations:** Because `imsegkmeans` initializes cluster centroids randomly, cluster indices (`1` vs. `2`) can swap between runs. Additionally, setting background pixels to hard black (`0`) introduces sharp artificial edges around the mask boundary, which can occasionally bias CNN feature extraction if the segmentation mask is fragmented.
+### Analysis of Hybrid Pipeline Behavior
+Interestingly, instead of improving classification accuracy, hard color segmentation caused SqueezeNet to misclassify the bell peppers as a **`sea slug`** with low confidence (`32.84%`). This highlights three important practical lessons when combining traditional pre-processing with pre-trained CNNs:
+
+1. **Domain Shift from Artificial Black Backgrounds:** Pre-trained ImageNet models rely heavily on background context. In ImageNet, brightly colored objects floating against a pitch-black void strongly correlate with underwater macro photography of nudibranchs (`sea slug`), whereas `bell pepper` images typically appear on tables or in markets. Replacing the background with pure black (`0`) pushed the image outside the visual domain the CNN expects.
+2. **Under-Segmentation with `K = 2`:** `peppers.png` contains multiple distinct hues (red, yellow, green peppers, and a dark purple background). Forcing K-Means to use only 2 clusters merges unrelated colors and cuts off parts of the vegetables, distorting their recognizable shapes.
+3. **Hard Boundary Artifacts:** Zeroing out background pixels creates sharp, unnatural step edges around the mask silhouette that can trigger false high-frequency activations in early convolutional layers.
+
+**Conclusion:** Traditional segmentation only improves AI classification when the isolated region preserves natural object boundaries and stays consistent with the training distribution of the neural network (for example, using a higher cluster count `K`, cropping a bounding box instead of blacking out pixels, or blurring the background rather than zeroing it out).
