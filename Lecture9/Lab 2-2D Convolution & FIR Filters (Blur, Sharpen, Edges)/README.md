@@ -16,7 +16,9 @@ Compared linear smoothing filters of different sizes and shapes:
 * **Box $3 \times 3$ and $7 \times 7$:** Equal-weight averaging blurs the image, but the larger $7 \times 7$ box introduces blocky, unnatural artifacts.
 * **Gaussian ($\sigma = 1.2$, $7 \times 7$):** Constructed as an outer product of two 1D Gaussian vectors (`g1d' * g1d`). It achieves smooth, natural noise suppression while preserving edge structure much better than a box filter of the same size.
 
-<img width="620" height="546" alt="image" src="https://github.com/user-attachments/assets/ef73552e-b88a-4259-a702-2d00e6c4a7d4" />
+### Filters Comparison
+<img width="680" height="156" alt="image" src="https://github.com/user-attachments/assets/b38ce579-3f5e-4e72-8e49-a8f13d688996" />
+
 
 
 ---
@@ -26,7 +28,9 @@ Enhanced local contrast and fine details using high-frequency emphasis:
 1. Subtracted the Gaussian-blurred image from the original (`mask = I - I_blur`) to isolate high-frequency edge details.
 2. Added the scaled mask back to the original image (`I + gain * mask`, with `gain = 1.0`) and clipped values to `[0, 1]`.
 
-![Unsharp Masking](screenshots/sec3_unsharp_masking.png)
+### Unsharp Masking
+<img width="680" height="156" alt="image" src="https://github.com/user-attachments/assets/fad5d104-9d21-4344-a1b0-296e3587c96e" />
+
 
 ---
 
@@ -35,14 +39,16 @@ Extracted structural boundaries using first- and second-order spatial derivative
 * **Sobel ($G_x$, $G_y$, and Gradient Magnitude):** First-order directional filters that highlight horizontal and vertical intensity transitions; `hypot(Gx, Gy)` combines both directions into an orientation-independent edge map.
 * **Laplacian:** A second-order isotropic derivative filter that responds to rapid intensity changes in all directions simultaneously, highlighting fine zero-crossing edges.
 
-![Edge Detection](screenshots/sec4_edges.png)
+### Edges
+<img width="680" height="156" alt="image" src="https://github.com/user-attachments/assets/7b5f1916-df8f-4185-8131-2aa2ce6dc9c9" />
+
 
 ---
 
 ## Correlation vs. Convolution
 Verified the equivalence between 2D convolution (`conv2`) and `imfilter` when the `'conv'` flag is enabled (which flips the kernel by $180^\circ$ before sliding it across the image). Because the $3 \times 3$ box kernel is symmetric, both operations yield identical results up to floating-point precision.
 
-* **Console output:** `Max difference (conv2 vs imfilter with conv): 0` *(замените на ваше значение из консоли, например `2.22045e-16`)*
+* **Console output:** `Max difference (conv2 vs imfilter with conv): 3.33067e-16`)*
 
 ---
 
@@ -52,7 +58,9 @@ Tested how different padding strategies affect image borders using a $7 \times 7
 * **`symmetric`:** Mirrors pixel values across the image boundary, maintaining smooth local continuity without artificial seams.
 * **`circular`:** Wraps pixels around from the opposite edge of the image, causing noticeable color/brightness bleeding along borders when opposite sides differ in intensity.
 
-![Boundary Handling](screenshots/sec6_boundaries.png)
+### Boundary Handling
+<img width="680" height="198" alt="image" src="https://github.com/user-attachments/assets/3fd45720-3254-4222-8561-1424a4335475" />
+
 
 ---
 
