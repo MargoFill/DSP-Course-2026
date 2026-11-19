@@ -60,7 +60,9 @@ Applied nonlinear power-law transformation ($s = c \cdot r^\gamma$):
 ## Sampling and Aliasing
 Downsampled the image to 10% of its original resolution using nearest-neighbor interpolation (`'nearest'`) without anti-aliasing filtering, then upscaled it back to the original dimensions. This creates severe pixelation (blocking artifacts), jagged edges, and loss of fine spatial details.
 ### Sampling and Aliasing
-<img width="680" height="198" alt="image" src="https://github.com/user-attachments/assets/81f6d75b-2dbf-4921-9bb5-4db447df879f" />
+<img width="792" height="198" alt="image" src="https://github.com/user-attachments/assets/6c26c63a-c2ee-48c9-97d9-f4aa9790da43" />
+
+
 
 
 ---
