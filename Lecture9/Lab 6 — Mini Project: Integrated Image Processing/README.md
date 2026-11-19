@@ -49,9 +49,6 @@ Comparison of the input image across all pipeline stages:
 ## 7. Project Report
 
 ### Pipeline Architecture
-The pipeline follows a sequential spatial-to-spectral workflow:
-$$\text{Raw Image} \xrightarrow{\text{grayscale}} I \xrightarrow{\text{medfilt2}} I_{\text{filt}} \xrightarrow{\text{imadjust}} I_{\text{enh}} \begin{cases} \xrightarrow{\text{Canny}} \text{Binary Edge Map} \\ \xrightarrow{\text{FFT} \cdot H_{\text{LP}} \rightarrow \text{IFFT}} I_{\text{lp}} \end{cases}$$
-
 First, spatial denoising prepares the signal so subsequent contrast stretching does not amplify noise. Next, contrast enhancement boosts local gradients before branching into two analytical outputs: binary structural edges (spatial domain) and low-frequency structural approximation (frequency domain).
 
 ### How Each Stage Relates to DSP Operations
