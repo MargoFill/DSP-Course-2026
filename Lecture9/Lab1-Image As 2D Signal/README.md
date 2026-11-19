@@ -33,10 +33,13 @@ Reduced the bit-depth of the grayscale image by flooring pixel intensities into 
 Applied linear intensity remapping using `imadjust(I, [0.2 0.8], [0 1])`. The original histogram is concentrated in the mid-tones; stretching expands the pixel values across the full `[0, 255]` dynamic range, producing a wider histogram and stronger local contrast (at the cost of clipping very dark and very bright pixels).
 
 ### Histogram
-<img width="661" height="460" alt="image" src="https://github.com/user-attachments/assets/5d8b3453-7d98-45ab-abc8-05a223a2ec79" />
-<img width="661" height="460" alt="image" src="https://github.com/user-attachments/assets/5d8b3453-7d98-45ab-abc8-05a223a2ec79" />
+<img width="345" height="505" alt="image" src="https://github.com/user-attachments/assets/c6835476-9f4f-4bc1-bb89-e188b3b9a5ce" />
+
+<img width="354" height="505" alt="image" src="https://github.com/user-attachments/assets/041a1519-bc65-4f18-8291-305657d8e064" />
+
 ### Contrast Stretching
-<img width="680" height="198" alt="image" src="https://github.com/user-attachments/assets/1818476f-b9b1-4f2f-be41-5672f2cbd5ee" />
+<img width="680" height="198" alt="image" src="https://github.com/user-attachments/assets/8635ac32-8e0c-4849-acac-ffe52b122517" />
+
 
 
 ---
