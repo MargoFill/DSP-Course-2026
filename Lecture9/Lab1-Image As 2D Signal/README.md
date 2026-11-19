@@ -23,7 +23,7 @@ Reduced the bit-depth of the grayscale image by flooring pixel intensities into 
 * **~4-bit (`I4`, step 16):** 16 gray levels (strong false contouring / posterization).
 
 ### Quantization comparison
-<img width="661" height="460" alt="image" src="https://github.com/user-attachments/assets/5d8b3453-7d98-45ab-abc8-05a223a2ec79" />
+<img width="680" height="198" alt="image" src="https://github.com/user-attachments/assets/aa0f8449-cb31-4516-83c5-87deab66c460" />
 
 
 
