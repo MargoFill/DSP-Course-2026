@@ -35,8 +35,24 @@ Additionally, three contrast enhancement techniques were benchmarked side-by-sid
 ### 4. Feature Extraction (Canny Edge Detection)
 Extracted object boundaries from the enhanced image using the Canny edge detector (`edge(I_enh, 'Canny', [0.1 0.25])`). Hysteresis thresholding (`low = 0.1`, `high = 0.25`) suppresses weak noise-induced gradients while preserving continuous structural contours.
 
+##### Extraxted Edges
+<img width="678" height="393" alt="image" src="https://github.com/user-attachments/assets/2e14c58a-17df-4803-a0bf-38a71182d016" />
+
+
 ### 5. Frequency-Domain Filtering (2D FFT & Ideal Low-Pass Mask)
 Transformed `I_enh` into the 2D spatial frequency domain (`fft2` + `fftshift`) and applied an ideal circular low-pass mask $H(u,v)$ with cutoff radius $D_0 = 60$ pixels ($\sqrt{u^2 + v^2} < 60$). Transforming back via inverse FFT (`ifft2`) retains smooth global illumination and coarse shapes while stripping fine textures and high-frequency edges.
+
+#### 2D FFT Spectrum
+<img width="328" height="221" alt="image" src="https://github.com/user-attachments/assets/f187bfdc-eeaf-4672-9bc7-79dcf233bcd8" />
+
+#### Low-Pass Mask
+<img width="301" height="149" alt="image" src="https://github.com/user-attachments/assets/661ed9df-abe6-4f6b-b368-b34e9a37fd4e" />
+
+#### Low-Pass Filter Result
+<img width="680" height="480" alt="image" src="https://github.com/user-attachments/assets/b71e91c9-fb87-4aa5-9a50-36b70ca32965" />
+
+
+
 
 ### 6. End-to-End Pipeline Visualization
 Comparison of the input image across all pipeline stages:
